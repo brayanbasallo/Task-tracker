@@ -36,5 +36,19 @@ def delete(task_id: str):
     with open("data.json", "w") as f:
         json.dump(json_data, f)
     print(f"Deleted task with ID {task_id}")
+    
+@app.command()
+def update(task_id: str, task: str):
+    json_data = get_json()
+    if task_id not in json_data["tasks"]:
+        print(f"Task with ID {task_id} not found")
+        return
+    json_data["tasks"][task_id] = task
+    with open("data.json", "w") as f:
+        json.dump(json_data, f)
+    print(f"Updated task with ID {task_id}")
+
+
+
 if __name__ == "__main__":
     app()

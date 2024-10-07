@@ -1,6 +1,9 @@
-# Task CLI
+# Task CLI - CLI application for managing tasks 
+Practical project for the "Task Tracker" project in the [roadmap.sh](https://roadmap.sh/projects/task-tracker).
 
 A command-line interface (CLI) application for managing tasks, built with Python and Typer.
+
+This application allows you to add, list, delete, update, mark tasks as in progress or completed, and delete all tasks.
 
 ## Installation
 
@@ -13,7 +16,7 @@ A command-line interface (CLI) application for managing tasks, built with Python
 2. Create and activate a virtual environment:
    ```
    python -m venv venv
-   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   source venv/bin/activate
    ```
 
 3. Install dependencies:
@@ -37,7 +40,9 @@ Available commands:
 - `delete_all`: Delete all tasks
 
 For detailed usage of each command, use:
-
+```
+python task_cli.py <command> --help
+```
 
 ## Examples
 

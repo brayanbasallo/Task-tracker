@@ -25,6 +25,16 @@ def list():
 
     for task_id, task in json_data["tasks"].items():
         print(f"{task_id}: {task}")
-
+        
+@app.command()
+def delete(task_id: str):
+    json_data = get_json()
+    if task_id not in json_data["tasks"]:
+        print(f"Task with ID {task_id} not found")
+        return
+    del json_data["tasks"][task_id]
+    with open("data.json", "w") as f:
+        json.dump(json_data, f)
+    print(f"Deleted task with ID {task_id}")
 if __name__ == "__main__":
     app()
